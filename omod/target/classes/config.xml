@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<module configVersion="1.2">
+
+	<!-- Module Properties -->
+	<id>ExtensionPoint</id>
+	<name>Extension Point Example Module</name>
+	<version>1.0-SNAPSHOT</version>
+	<package>org.openmrs.module.ExtensionPoint</package>
+	<author>Patrick</author>
+	<description>
+		Display bluecard images for patient sent from Kenya Data Migrant Api
+	</description>
+	<updateURL>https://modules.openmrs.org/modules/download/ExtensionPoint/update.rdf</updateURL>
+	<require_version>1.8.2</require_version>
+	<!-- / Module Properties -->
+
+	
+	<!-- Module Activator -->
+	<activator>org.openmrs.module.ExtensionPoint.ExtensionPointExampleActivator</activator>
+	
+	
+	<!-- Adds link to admin page -->
+	<extension>
+		<point>org.openmrs.admin.list</point>
+		<class>org.openmrs.module.ExtensionPoint.extension.html.AdminList</class>
+	</extension>
+
+    <!--Add extension point to patient dashboard-->
+    <extension>
+        <point>org.openmrs.patientDashboardTab</point>
+        <class>org.openmrs.module.ExtensionPoint.extension.html.ExamplePatientDashboardTab</class>
+    </extension>
+
+    <extension>
+        <point>org.openmrs.patientDashboardTab</point>
+        <class>org.openmrs.module.ExtensionPoint.extension.html.ComplexObsDashboardTab</class>
+    </extension>
+	
+	<!-- Maps hibernate file's, if present -->
+	<mappingFiles>
+				
+	</mappingFiles>
+
+	<!-- Internationalization -->
+	<!-- All message codes should start with ExtensionPoint. -->
+	<messages>
+		<lang>en</lang>
+		<file>messages.properties</file>
+	</messages>
+	<messages>
+		<lang>fr</lang>
+		<file>messages_fr.properties</file>
+	</messages>
+	<messages>
+		<lang>es</lang>
+		<file>messages_es.properties</file>
+	</messages>
+	<!-- /Internationalization -->
+
+</module>
+
